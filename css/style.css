@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    /* border: 1px solid rgba(255, 0, 0, 0.2); */
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--darkest); 
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+body{
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+    color: var(--darkest);
+    font-size: 24px;
+    font-family: var(--ff-play);
+
+    background-image: url('assets/milky-way-2695569_1280.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+:root{
+    --yellow-main: #FFA700;
+    --darkest: #1B1B1B;
+    --gray: #BFBFBF;
+    --white: #FFF;
+    --orange-accent: #FF5D00;
+    --red-accent: #ff0000;
+
+    --facebook: #1877F2;
+    --github: #4078c0;
+
+    --ff-play: 'Inter', sans-serif;
+}
+#scrollBtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    cursor: pointer;
+    padding: 1px;
+    background-color: var(--darkest);
+    color: var(--yellow-main);
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 100%;
+}
+#scrollUpBtn{
+    color: var(--yellow-main);
+    font-size: 2rem;
+}
+
+ion-icon{
+    color: var(--darkest);
+}
+section{
+    height: 100vh;
+    padding-inline: 3rem;
+}
+h6{                    /* line */
+    min-height: 1px;
+    background-color: var(--darkest);
+    border: none;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+    text-decoration: none;
+}
+li a{
+    text-decoration: none;
+    color: var(--darkest);
+}
+li a:hover{
+    color: var(--red-accent);
+}
+/**********************************************************/
+#home{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+}
+
+#line1{width: 300px;}
+.nameNlinks{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#home .left .name{
+    font-weight: bold;
+}
+.nameNlinks .links{
+    margin: auto;
+}
+.nameNlinks .links ul{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+.nameNlinks .links ul li{
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.nameNlinks .links ul li{
+    background-color: var(--orange-accent);
+    padding: 0.5rem;
+    padding-block: 0.2rem 0rem;
+    border-radius: 100%;
+}
+.nameNlinks .links ul li ion-icon{
+    transform: translateY(5%);
+}
+#line2{width: 100%;}
+
+.information-part{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1rem;
+}
+.information-part .left{
+    padding: 1rem;
+    position: relative;
+}
+.information-part .left p{
+    font-size: 0.55rem;
+    font-weight: bold;
+    text-align: justify;
+    padding: 0.25rem;
+    border: 1px solid var(--darkest);
+    margin-bottom: 1rem;
+}
+#line5{
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+.information-part .left #box2{
+    padding-inline-start: 3rem;
+    right: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+    border: none;
+    text-align: right;
+}   
+.information-part .left #box2 span{
+    display: block;
+    max-width: 100%;
+    font-size: 1.75rem;
+    font-weight: bold;
+} 
+.information-part .left #box3{
+    border: none;
+    font-size: 1rem;
+}
+
+.information-part .right ul{
+    margin: 1rem;
+}
+#line3{
+    width: 100%;
+}
+
+.playlist{
+    padding-block: 1rem;
+}
+#music-player{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  background-color: var(--orange-accent);
+  border: 1px solid var(--darkest);
+  box-shadow: 0px 0px 5px var(--darkest);
+  border-radius: 10px;
+  text-align: center;
+}
+audio{
+    display: none;
+}
+
+.control-btn{
+  margin: 0px;
+  padding: 10px 10px;
+  background-color: var(--darkest);
+  color: white;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+}
+#controls ion-icon{
+    color: var(--orange-accent);
+}
+
+#progress-bar-container{
+    height: 5px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--gray);
+    border-radius: 1rem;
+}
+
+#progress-bar{
+    width: 0;
+    height: 100%;
+    background-color: var(--darkest);
+    border-radius: 1rem;
+}
+
+#play-btn, #stop-btn{
+  display: inline-block;
+}
+
+#pause-btn{
+  display: none;
+}
+.right ol{
+    font-size: 0.75rem;
+}
+.right ol p{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.cover-container{
+    margin-top: 1rem;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+}
+
+#home .author-img{
+    position: relative;
+    width: 480px;
+}
+#home .author-img img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    border-radius: 0 0 45% 45%;
+    z-index: 3;
+}
+#home .author-img #circle{
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background-color: var(--darkest);
+    border-radius:  100% 100%;
+    z-index: 1;
+}
+
+#home .right h3{
+    position: absolute;
+    top: -1.5rem;
+    right: 2rem;
+    font-size: 10rem;
+    font-weight: normal;
+}
+#home .right .design{
+    position: absolute;
+    right: 2.75rem;
+    bottom: 1rem;
+}
+#line7{
+    margin-block: 1rem;
+}
+.marquee {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.marquee p {
+    color: var(--red-accent);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+    animation: marquee 1s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+#line6{
+    position: absolute;
+    width: 95%;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/**********************************************************/
+#aboutMe{
+    padding-block: 1rem;
+    position: relative;
+    background-color: var(--gray);
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    overflow: hidden;
+}
+#aboutMe #line-aboutMe-title{
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    width: 400px;
+    height: 100%;
+    background-color: var(--yellow-main);
+    z-index: 1;
+}
+
+#aboutMe h1{
+    position: absolute;
+    left: 6rem;
+    font-size: 6rem; 
+    z-index: 99;
+    pointer-events: none;
+}
+#aboutMe h1 span{
+    display: block;
+}
+#aboutMe h1 #me{
+    font-size: 14rem;
+}
+.aboutMe-boxes{
+    font-weight: bold;
+    padding-block: 2rem;
+}
+.aboutMe-boxes img{
+    position: absolute;
+    width: 500px;
+    top: 1rem;
+    right: 5%;
+    z-index: 0;
+    pointer-events: none;
+}
+.aboutMe-boxes div{
+    position: relative;
+    display: block;
+    width: 600px;
+    border: 1px solid var(--darkest);
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: justify;
+    background-color: var(--gray);
+    
+    transition: background-color 0.5s ease, transform 1s ease, box-shadow 0.5s ease;
+}
+.aboutMe-boxes div:hover{
+    background-color: var(--darkest);
+    color: var(--yellow-main);
+    transform: translateY(-0.5rem);
+    box-shadow: 5px 5px 0px var(--yellow-main);
+}
+.aboutMe-boxes .right{
+    margin-left: auto;
+}
+.aboutMe-boxes #box2{
+    width: 300px;
+    font-size: 0.7rem;
+}
+.aboutMe-boxes #box3{
+    width: 75%;
+    margin: 150px auto;
+    font-size: 0.7rem;
+}
+/**********************************************************/
+#projects{
+    height: 200vh;
+    background-color: var(--darkest);
+    color: white;
+    padding-block: 1rem;
+    position: relative;
+}
+
+#projects .marquee-container{
+    width: 100%;
+}
+  
+#projects .marquee-container .scrolling-text{
+    display: inline-block;
+    position: relative;
+    animation: bounce 25s linear infinite;
+    white-space: nowrap;
+    color: var(--yellow-main);
+    letter-spacing: 1rem;
+}
+#projects .marquee-container .scrolling-text ion-icon{
+    color: var(--yellow-main);
+}
+  
+@keyframes bounce{
+    0%, 100% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(calc(-140% + 100vw));
+    }
+}
+
+#line8{
+    background-color: var(--white);
+    margin-block: 1rem;
+    margin-bottom: 3rem;
+}
+#projects img{
+    position: absolute;
+    padding: 0.25rem;
+    background-color: var(--yellow-main);
+    transition: all 0.5s ease;
+}
+#projects img:hover{
+    background-color: var(--orange-accent);
+    color: var(--yellow-main);
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+#project1{
+    width: 50%;
+}
+#project2{
+    width: 30%;
+    top: 43%;
+    left: 10%;
+}
+#project3{
+    width: 50%;
+    top: 15rem;
+    right: 3rem;
+}
+#project4{
+    width: 30%;
+    right: 5rem;
+    bottom: 1.5rem;
+}
+#project5{
+    width: 35%;
+    top: 59%;
+    left: 25%;
+}
+#project6{
+    width: 30%;
+    top: 75%;
+    left: 15%;
+}
+/**********************************************************/
+#misc{
+    position: relative;
+    background-color: var(--yellow-main);
+    padding: 1rem;
+}
+#misc .arts{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "a1 a4 a3 a5"
+        "a1 a7 a2 a6";
+    gap: 1rem;
+    align-items: center;
+}
+#misc .arts img{
+    
+    margin: auto;
+}
+#art1{
+    width: 90%;
+    grid-area: a1;
+}
+#art2{
+    width: 60%;
+    grid-area: a2;
+}
+#art3{
+    width: 78%;
+    grid-area: a3;
+}
+#art4{
+    width: 73%;
+    grid-area: a4;
+}
+#art5{
+    width: 100%;
+    grid-area: a5;
+}
+#art6{
+    width: 73%;
+    grid-area: a6;
+}
+#art7{
+    width: 100%;
+    grid-area: a7;
+}
+
+#misc p{
+    position: absolute;
+    bottom: 13rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10rem;
+    font-weight: bold;
+    pointer-events: none;
+}
+/**********************************************************/
+#maintenance{
+    display: none;
+    background-color: var(--gray);
+}
+#maintenance div{
+    padding: 2rem;
+    text-align: center;
+}
+#maintenance ion-icon{
+    font-size: 7rem;
+}
+#maintenance p{
+    font-size: 1rem;
+}
+/**********************************************************/
+@media (max-width:1344px){
+    #home, #aboutMe, #projects, #misc{
+        display: none;
+    }
+    #maintenance{
+        display: block;
+    }
+}
+
+
