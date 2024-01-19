@@ -542,13 +542,13 @@ audio{
     font-size: 1rem;
 }
 /**********************************************************/
-@media (max-width:1344px){
+/*@media (max-width:1344px){
     #home, #aboutMe, #projects, #misc{
         display: none;
     }
     #maintenance{
         display: block;
     }
-}
+}*/
 
 
